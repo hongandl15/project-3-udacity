@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend
+  labels:
+    app: frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: frontend
+  template:
+    metadata:
+      labels:
+        app: frontend
+    spec:
+      restartPolicy: Always
+      containers:
+      - name: frontend
+        image: hongandl15/udagram-frontend:v5
+        imagePullPolicy: Always
+        ports: 
+        - containerPort: 80
+        resources:
+          requests:
+            cpu: 128m
+          limits:
+            cpu: 512m

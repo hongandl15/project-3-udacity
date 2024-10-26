@@ -1,0 +1,14 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: env-config
+  namespace: default
+data:
+  POSTGRES_DB: postgres
+  POSTGRES_HOST: database-1.ch8h2hkazc4o.ap-southeast-1.rds.amazonaws.com
+  AWS_REGION: ap-southeast-1
+  AWS_PROFILE: default
+  AWS_BUCKET: udagram-s3
+  JWT_SECRET: testing_jwt
+  URL: "http://localhost:8100"
+  NODE_OPTIONS: --max-old-space-size=1024
